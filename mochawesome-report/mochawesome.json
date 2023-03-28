@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-03-28T17:26:57.806Z",
+    "end": "2023-03-28T17:27:20.963Z",
+    "duration": 23157,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8a853e24-9cb1-4adf-97c0-ba58cc1a9a46",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "53aa8c4c-7f75-4edb-8d1a-0f5fc90776be",
+          "title": "add todo tests",
+          "fullFile": "D:\\seleniumDemo\\test\\framework_learn.js",
+          "file": "\\test\\framework_learn.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds a todo to application",
+              "fullTitle": "add todo tests successfully adds a todo to application",
+              "timedOut": null,
+              "duration": 17139,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launching the browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\nlet inputString = \"Learn Cypress for E2E Testing\";\n//navigate to the todo app\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app\");\n//locate the input field and add a todo\n//*[@id=\"sampletodotext\"]\n\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(inputString, Key.ENTER);\n//assertion using chai\nlet todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){return value});\ntodoText.should.equal(inputString);\n    \n// await driver.findElement(By.id())\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "835c9fb9-e338-44ee-8eac-4988a92def0c",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "835c9fb9-e338-44ee-8eac-4988a92def0c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17139,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "38d3d658-2fb2-4262-8e9b-c5d77a14ec20",
+          "title": "add todo tests",
+          "fullFile": "D:\\seleniumDemo\\test\\framework_2.js",
+          "file": "\\test\\framework_2.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds another todo to application",
+              "fullTitle": "add todo tests successfully adds another todo to application",
+              "timedOut": null,
+              "duration": 17250,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launching the browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\nlet inputString = \"Learn Cypress for E2E Testing\";\n//navigate to the todo app\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app\");\n//locate the input field and add a todo\n//*[@id=\"sampletodotext\"]\n\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(inputString, Key.ENTER);\n//assertion using chai\nlet todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){return value});\ntodoText.should.equal(inputString);\n    \n// await driver.findElement(By.id())\n//close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "5013a73d-b0c8-4cf6-8a90-071e8a47521a",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "successfully adds another todo to application",
+              "fullTitle": "add todo tests successfully adds another todo to application",
+              "timedOut": null,
+              "duration": 5373,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launching the browser\nlet driver = await new Builder().forBrowser(\"chrome\").build();\nlet inputString = \"This will fail. I only want to see what a failure report looks like\";\n//navigate to the todo app\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app\");\n//locate the input field and add a todo\n//*[@id=\"sampletodotext\"]\n\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Hey there! It's been a good day!\", Key.ENTER);\n//assertion using chai\nlet todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function(value){return value});\ntodoText.should.equal(inputString);\n    \n// await driver.findElement(By.id())\n//close the browser\nawait driver.quit();",
+              "err": {
+                "message": "AssertionError: expected 'Hey there! It\\'s been a good day!' to equal 'This will fail. I only want to see wh…'",
+                "estack": "AssertionError: expected 'Hey there! It\\'s been a good day!' to equal 'This will fail. I only want to see wh…'\n    at Context.<anonymous> (test\\framework_2.js:45:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": "- Hey there! It's been a good day!\n+ This will fail. I only want to see what a failure report looks like\n"
+              },
+              "uuid": "0d9eaf5f-ecb4-40f1-83e7-58833976e941",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5013a73d-b0c8-4cf6-8a90-071e8a47521a"
+          ],
+          "failures": [
+            "0d9eaf5f-ecb4-40f1-83e7-58833976e941"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22623,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
